@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\Admin\UserController;
+use App\Http\Controllers\API\User\ShipController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,8 +45,12 @@ Route::group(['prefix' => 'api'], function () {
         'middleware' => ['role:user', 'verified.user'],
         'prefix' => 'user'
     ], function () {
-        Route::get('/', function () {
-            dd(auth()->user());
-        });
+        Route::controller(ShipController::class)
+            ->prefix('ship')
+            ->group(function () {
+                Route::get('/', 'index');
+                Route::post('/', 'store');
+                Route::put('/{ship}/update', 'update');
+            });
     });
 });
