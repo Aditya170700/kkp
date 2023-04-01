@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\API\Admin\ShipController as AdminShipController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\Admin\UserController;
@@ -38,6 +39,13 @@ Route::group(['prefix' => 'api'], function () {
             ->group(function () {
                 Route::get('/', 'index');
                 Route::put('/{user}/verify', 'verify');
+            });
+
+        Route::controller(AdminShipController::class)
+            ->prefix('ship')
+            ->group(function () {
+                Route::get('/', 'index');
+                Route::put('/{ship}/update', 'update');
             });
     });
 

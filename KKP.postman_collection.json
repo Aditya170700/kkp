@@ -1,0 +1,569 @@
+{
+	"info": {
+		"_postman_id": "5f632017-676a-4c56-9c39-c1376eb82d8a",
+		"name": "KKP",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26427147"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Transfer-Encoding",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"admin@example.com\",\n    \"password\": \"password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8001/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Transfer-Encoding",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"User\",\n    \"email\": \"adityaric72@gmail.com\",\n    \"password\": \"password\",\n    \"password_confirmation\": \"password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8001/api/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check OTP",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDEvYXBpL2F1dGgvcmVnaXN0ZXIiLCJpYXQiOjE2ODAzMDU4MzcsImV4cCI6MTY4MDMwOTQzNywibmJmIjoxNjgwMzA1ODM3LCJqdGkiOiJzZjYxVzMya21nczR1RWY1Iiwic3ViIjoiNCIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.xeMy7v1-FZBaZvIGh6Rtl5iGu4Sc7Q_ckIaQF0MKV4w",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"otp\": 976142\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8001/api/auth/check-otp",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"auth",
+								"check-otp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Request OTP",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDEvYXBpL2F1dGgvcmVnaXN0ZXIiLCJpYXQiOjE2ODAzMDU4MzcsImV4cCI6MTY4MDMwOTQzNywibmJmIjoxNjgwMzA1ODM3LCJqdGkiOiJzZjYxVzMya21nczR1RWY1Iiwic3ViIjoiNCIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.xeMy7v1-FZBaZvIGh6Rtl5iGu4Sc7Q_ckIaQF0MKV4w",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8001/api/auth/otp",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"auth",
+								"otp"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Kapal",
+					"item": [
+						{
+							"name": "Index",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Transfer-Encoding",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Bearer",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDEvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE2ODAzMDgwOTAsImV4cCI6MTY4MDMxMTY5MCwibmJmIjoxNjgwMzA4MDkwLCJqdGkiOiJmbERHYWpUeUJjZFplWDlaIiwic3ViIjoiNCIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.-0z0Ls9KoIfrMroy-YLjlzXD4necl0qvKRe02_j-Pl0",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8001/api/user/ship",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8001",
+									"path": [
+										"api",
+										"user",
+										"ship"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Store",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Transfer-Encoding",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Bearer",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDEvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE2ODAzMDgwOTAsImV4cCI6MTY4MDMxMTY5MCwibmJmIjoxNjgwMzA4MDkwLCJqdGkiOiJmbERHYWpUeUJjZFplWDlaIiwic3ViIjoiNCIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.-0z0Ls9KoIfrMroy-YLjlzXD4necl0qvKRe02_j-Pl0",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "kode_kapal",
+											"value": "KP 12",
+											"type": "text"
+										},
+										{
+											"key": "nama_kapal",
+											"value": "Kapal 12",
+											"type": "text"
+										},
+										{
+											"key": "nama_pemilik",
+											"value": "Aditya",
+											"type": "text"
+										},
+										{
+											"key": "alamat_pemilik",
+											"value": "Jl. Wts",
+											"type": "text"
+										},
+										{
+											"key": "ukuran_kapal",
+											"value": "100",
+											"type": "text"
+										},
+										{
+											"key": "kapten",
+											"value": "Maverick",
+											"type": "text"
+										},
+										{
+											"key": "jumlah_anggota",
+											"value": "100",
+											"type": "text"
+										},
+										{
+											"key": "foto_kapal",
+											"type": "file",
+											"src": "/Users/macbookair/Pictures/icon tanaman.jpg"
+										},
+										{
+											"key": "nomor_izin",
+											"value": "IZ.12987912",
+											"type": "text"
+										},
+										{
+											"key": "dokumen_perizinan",
+											"type": "file",
+											"src": "/Users/macbookair/Downloads/Budget Project  - ERP - Project .pdf"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8001/api/user/ship",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8001",
+									"path": [
+										"api",
+										"user",
+										"ship"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Transfer-Encoding",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Bearer",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDEvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE2ODAzMDgwOTAsImV4cCI6MTY4MDMxMTY5MCwibmJmIjoxNjgwMzA4MDkwLCJqdGkiOiJmbERHYWpUeUJjZFplWDlaIiwic3ViIjoiNCIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.-0z0Ls9KoIfrMroy-YLjlzXD4necl0qvKRe02_j-Pl0",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "nama_kapal",
+											"value": "Kapal 11 Edit",
+											"type": "text"
+										},
+										{
+											"key": "nama_pemilik",
+											"value": "Aditya",
+											"type": "text"
+										},
+										{
+											"key": "alamat_pemilik",
+											"value": "Jl. Wts",
+											"type": "text"
+										},
+										{
+											"key": "ukuran_kapal",
+											"value": "100",
+											"type": "text"
+										},
+										{
+											"key": "kapten",
+											"value": "Maverick",
+											"type": "text"
+										},
+										{
+											"key": "jumlah_anggota",
+											"value": "100",
+											"type": "text"
+										},
+										{
+											"key": "foto_kapal",
+											"type": "file",
+											"src": "/Users/macbookair/Pictures/icon tanaman.jpg"
+										},
+										{
+											"key": "nomor_izin",
+											"value": "IZ.12987912",
+											"type": "text"
+										},
+										{
+											"key": "dokumen_perizinan",
+											"type": "file",
+											"src": "/Users/macbookair/Downloads/Budget Project  - ERP - Project .pdf"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8001/api/user/ship/2/update",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8001",
+									"path": [
+										"api",
+										"user",
+										"ship",
+										"2",
+										"update"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "User",
+					"item": [
+						{
+							"name": "Index",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDEvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE2ODAzMDY1MzksImV4cCI6MTY4MDMxMDEzOSwibmJmIjoxNjgwMzA2NTM5LCJqdGkiOiJabUdFelhadUxkdWtQOG9JIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.Y2-Bfk_Hh1-7XFdsI_zx6_VdJjqH8kYwZdvQvW0Fad0",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8001/api/admin/user",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8001",
+									"path": [
+										"api",
+										"admin",
+										"user"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Verify",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDEvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE2ODAzMDY1MzksImV4cCI6MTY4MDMxMDEzOSwibmJmIjoxNjgwMzA2NTM5LCJqdGkiOiJabUdFelhadUxkdWtQOG9JIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.Y2-Bfk_Hh1-7XFdsI_zx6_VdJjqH8kYwZdvQvW0Fad0",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8001/api/admin/user/4/verify",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8001",
+									"path": [
+										"api",
+										"admin",
+										"user",
+										"4",
+										"verify"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Kapal",
+					"item": [
+						{
+							"name": "Index",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Transfer-Encoding",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Bearer",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDEvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE2ODAzMDk3ODUsImV4cCI6MTY4MDMxMzM4NSwibmJmIjoxNjgwMzA5Nzg1LCJqdGkiOiJYRENQTG8zM1lzN3RwWFpTIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.qwabsnfHzKOtoikeX8TreU4qTtzU8a5taVZbQBMkOOA",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8001/api/admin/ship",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8001",
+									"path": [
+										"api",
+										"admin",
+										"ship"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Bearer",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDEvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE2ODAzMDk3ODUsImV4cCI6MTY4MDMxMzM4NSwibmJmIjoxNjgwMzA5Nzg1LCJqdGkiOiJYRENQTG8zM1lzN3RwWFpTIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.qwabsnfHzKOtoikeX8TreU4qTtzU8a5taVZbQBMkOOA",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"is_verified\": false,\n    \"notes\": \"Kurang foto\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8001/api/admin/ship/2/update",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8001",
+									"path": [
+										"api",
+										"admin",
+										"ship",
+										"2",
+										"update"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
